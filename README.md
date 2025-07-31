@@ -26,14 +26,14 @@ You can run any problem by passing its name (like problem1) in the command line.
 
 ## Run from Terminal
 
-'''
+```
 dotnet run -- problem1
-'''
+```
 
 This runs the Run() method inside Problems/Problem1.cs.
 
 
-## 🐞 Debugging in VS Code
+##🐞 Debugging in VS Code
 
 If you're using Visual Studio Code, here's how to debug:
 
@@ -46,5 +46,43 @@ If you're using Visual Studio Code, here's how to debug:
 Example launch config:
 
 "args": ["problem1"]
+
+
+
+
+## sample launch.json file 
+
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "name": "Run Problem1",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/NeetCode75_CSharp/bin/Debug/net9.0/NeetCode75_CSharp.dll",
+      "args": ["Sample"],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
+      "name": "Run Problem2",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/NeetCode75_CSharp//bin/Debug/net9.0/NeetCode75_CSharp.dll",
+      "args": ["problem2"],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    }
+  ]
+}
+```
+
+
 
 Set breakpoints in any file and step through the code as needed.
